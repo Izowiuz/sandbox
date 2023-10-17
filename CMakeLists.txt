@@ -17,4 +17,9 @@ find_package(spdlog CONFIG REQUIRED)
 
 create_sandbox_target("algorithms" "merge-sort")
 
+create_sandbox_target("types" "class-id")
+
 create_sandbox_target("adl" "swap")
+create_sandbox_target("adl" "begin-end")
+
+create_sandbox_target("patterns" "classic-visitor")
