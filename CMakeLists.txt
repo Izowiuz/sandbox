@@ -22,4 +22,9 @@ create_sandbox_target("types" "class-id")
 create_sandbox_target("adl" "swap")
 create_sandbox_target("adl" "begin-end")
 
+create_sandbox_target("talks" "inheritance-is-the-base-class-of-evil")
+
 create_sandbox_target("patterns" "classic-visitor")
+create_sandbox_target("patterns" "std-visit-visitor")
+create_sandbox_target("patterns" "acyclic-visitor")
+create_sandbox_target("patterns" "strategy")
