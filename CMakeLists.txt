@@ -28,3 +28,11 @@ create_sandbox_target("patterns" "classic-visitor")
 create_sandbox_target("patterns" "std-visit-visitor")
 create_sandbox_target("patterns" "acyclic-visitor")
 create_sandbox_target("patterns" "strategy")
+create_sandbox_target("patterns" "strategy-std-function")
+create_sandbox_target("patterns" "command")
+create_sandbox_target("patterns" "object-adapter")
+create_sandbox_target("patterns" "class-adapter")
+
+create_sandbox_target("stuff" "const-span")
+create_sandbox_target("stuff" "fold-expressions")
+
