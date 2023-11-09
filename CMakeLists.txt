@@ -35,6 +35,7 @@ create_sandbox_target("patterns" "class-adapter")
 create_sandbox_target("patterns" "tagged-pull-observer")
 create_sandbox_target("patterns" "tagged-pull-observer-std-function")
 create_sandbox_target("patterns" "crtp")
+create_sandbox_target("patterns" "crtp-mixin-strong-type")
 create_sandbox_target("stuff" "virtual-destructor")
 
 create_sandbox_target("stuff" "const-span")

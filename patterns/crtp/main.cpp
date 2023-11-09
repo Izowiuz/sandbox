@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <vector>
 
 template <typename Derived>
 class DenseVector
@@ -54,7 +55,23 @@ public:
     }
 };
 
+template <typename T>
+class DynamicVector : public DenseVector<DynamicVector<T>>
+{
+public:
+    auto size() const
+    {
+        return mData.size();
+    }
+
+private:
+    std::vector<T> mData;
+};
+
 int main()
 {
+    DynamicVector<int> dynvec;
+    dynvec.size();
+
     return EXIT_SUCCESS;
 }
