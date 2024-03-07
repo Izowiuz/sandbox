@@ -1,9 +1,9 @@
-function(create_sandbox_target category_name target_name)
+function(create_sandbox_target tag target_name)
 
-set(SANDBOX_TARGET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${category_name}/${target_name}/")
+set(SANDBOX_TARGET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${tag}/${target_name}/")
 message("Target path: ${SANDBOX_TARGET_PATH}")
 
-set(full_target_name ${category_name}-${target_name})
+set(full_target_name ${tag}-${target_name})
 
 if (NOT EXISTS "${SANDBOX_TARGET_PATH}")
     message(FATAL_ERROR "Directory: ${SANDBOX_TARGET_PATH} do not exists.")
@@ -46,10 +46,10 @@ if (tests_sources_count)
 
     target_link_libraries(
         ${full_target_name}-tests
-        PRIVATE
-            spdlog::spdlog
-            GTest::gtest
-            GTest::gtest_main
+    PRIVATE
+        spdlog::spdlog
+        GTest::gtest
+        GTest::gtest_main
     )
 
     set_property(
@@ -85,8 +85,8 @@ if (EXISTS "${SANDBOX_TARGET_PATH}/main.cpp")
 
     target_link_libraries(
         ${full_target_name}
-        PRIVATE
-            spdlog::spdlog
+    PRIVATE
+        spdlog::spdlog
     )
 
     set_property(
