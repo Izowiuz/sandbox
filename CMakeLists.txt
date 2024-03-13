@@ -30,6 +30,9 @@ create_sandbox_target("c++-software-design" "crtp-mixin-strong-type")
 create_sandbox_target("algorithms" "merge-sort")
 create_sandbox_target("adl" "swap")
 create_sandbox_target("adl" "begin-end")
+
+create_sandbox_target("beautiful-c++" "function-overloading-conversion-problem")
+
 create_sandbox_target("types" "class-id")
 create_sandbox_target("random" "virtual-destructor")
 create_sandbox_target("random" "const-span")
