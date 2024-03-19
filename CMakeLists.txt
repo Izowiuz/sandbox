@@ -32,6 +32,8 @@ create_sandbox_target("adl" "swap")
 create_sandbox_target("adl" "begin-end")
 
 create_sandbox_target("beautiful-c++" "function-overloading-conversion-problem")
+create_sandbox_target("beautiful-c++" "member-initialization-order")
+create_sandbox_target("beautiful-c++" "structured-bindings")
 
 create_sandbox_target("types" "class-id")
 create_sandbox_target("random" "virtual-destructor")
