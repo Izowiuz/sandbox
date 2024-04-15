@@ -36,9 +36,12 @@ create_sandbox_target("beautiful-c++" "member-initialization-order")
 create_sandbox_target("beautiful-c++" "structured-bindings")
 
 create_sandbox_target("types" "class-id")
+
 create_sandbox_target("random" "virtual-destructor")
 create_sandbox_target("random" "const-span")
 create_sandbox_target("random" "fold-expressions")
 create_sandbox_target("random" "structured-bindings")
-create_sandbox_target("talks" "inheritance-is-the-base-class-of-evil")
+
+create_sandbox_target("programming-with-c++20" "add")
+create_sandbox_target("programming-with-c++20" "abbreviated-function-template")
 
