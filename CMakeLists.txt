@@ -15,6 +15,13 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 find_package(GTest CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 
+create_sandbox_target("types" "class-id")
+
+create_sandbox_target("algorithms" "merge-sort")
+
+create_sandbox_target("adl" "swap")
+create_sandbox_target("adl" "begin-end")
+
 create_sandbox_target("c++-software-design" "classic-visitor")
 create_sandbox_target("c++-software-design" "std-visit-visitor")
 create_sandbox_target("c++-software-design" "acyclic-visitor")
@@ -27,15 +34,10 @@ create_sandbox_target("c++-software-design" "tagged-pull-observer")
 create_sandbox_target("c++-software-design" "tagged-pull-observer-std-function")
 create_sandbox_target("c++-software-design" "crtp")
 create_sandbox_target("c++-software-design" "crtp-mixin-strong-type")
-create_sandbox_target("algorithms" "merge-sort")
-create_sandbox_target("adl" "swap")
-create_sandbox_target("adl" "begin-end")
 
 create_sandbox_target("beautiful-c++" "function-overloading-conversion-problem")
 create_sandbox_target("beautiful-c++" "member-initialization-order")
 create_sandbox_target("beautiful-c++" "structured-bindings")
-
-create_sandbox_target("types" "class-id")
 
 create_sandbox_target("random" "virtual-destructor")
 create_sandbox_target("random" "const-span")
@@ -44,4 +46,6 @@ create_sandbox_target("random" "structured-bindings")
 
 create_sandbox_target("programming-with-c++20" "add")
 create_sandbox_target("programming-with-c++20" "abbreviated-function-template")
-
+create_sandbox_target("programming-with-c++20" "conditional-call")
+create_sandbox_target("programming-with-c++20" "coroutines-int-generator")
+create_sandbox_target("programming-with-c++20" "coroutines-parse-v1")
