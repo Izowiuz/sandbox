@@ -42,12 +42,11 @@ struct promise_type_base {
         std::terminate();
     }
 
-    // TODO: fix me?
-    // static auto get_return_object_on_allocation_failure()
-    // {
-    //     spdlog::info("get_return_object_on_allocation_failure()");
-    //     return Generator(nullptr);
-    // }
+    static auto get_return_object_on_allocation_failure()
+    {
+        spdlog::info("get_return_object_on_allocation_failure()");
+        return Generator(nullptr);
+    }
 };
 
 // coroutine iterator
