@@ -181,7 +181,7 @@ struct generator {
     generator(generator const&) = delete;
 
     generator(generator&& other) noexcept
-        : mCoroutineHandle(std::exchange(other.coroutineHandle, nullptr))
+        : mCoroutineHandle(std::exchange(other.mCoroutineHandle, nullptr))
     {
     }
 
