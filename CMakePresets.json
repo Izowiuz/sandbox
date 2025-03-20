@@ -1,0 +1,27 @@
+{
+    "version": 10,
+    "configurePresets": [
+        {
+            "name": "base",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}/",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+          "inherits": "base",
+          "name": "sandbox-debug",
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug"
+          }
+        },
+        {
+          "inherits": "base",
+          "name": "sandbox-release",
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release"
+          }
+        }
+    ]
+}

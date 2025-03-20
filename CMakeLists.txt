@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
 
-if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(VCPKG_ROOT $ENV{VCPKG_ROOT})
-    set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
-endif()
-
 include(create_sandbox_target.cmake)
 
 project(sandbox)
