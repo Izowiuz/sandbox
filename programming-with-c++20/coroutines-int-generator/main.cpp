@@ -82,6 +82,13 @@ struct coroutine_iterator {
         return coroutineHandle.done();
     }
 
+    // [ ... ? ]
+    bool operator!=(coroutine_iterator const&)
+    {
+        spdlog::info("operator==()");
+        return !coroutineHandle.done();
+    }
+
     auto const& operator*() const
     {
         spdlog::info("operator*()");

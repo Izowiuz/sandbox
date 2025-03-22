@@ -164,6 +164,12 @@ struct coroutine_iterator {
         return coroutineHandle.done();
     }
 
+    // [ ... ? ]
+    bool operator!=(coroutine_iterator const&)
+    {
+        return !coroutineHandle.done();
+    }
+
     auto const& operator*() const
     {
         return coroutineHandle.promise().mValue;
