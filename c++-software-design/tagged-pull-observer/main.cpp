@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <cstdlib>
 #include <unordered_set>
 
@@ -15,7 +16,7 @@ public:
 class Foo
 {
 public:
-    enum class StateChange { XChanged, YChanged };
+    enum class StateChange : std::uint8_t { XChanged, YChanged };
 
     using FooObserver = Observer<Foo, Foo::StateChange>;
 

@@ -60,7 +60,7 @@ int main()
             int index;
         };
 
-        std::vector<Lala> v{ { "a", 4 }, { "b", 44 }, { "c", 1 } };
+        std::vector<Lala> v{ { .name = "a", .index = 4 }, { .name = "b", .index = 44 }, { .name = "c", .index = 1 } };
 
         auto print_vector = [](auto&& v) {
             for (auto const& element : v) {

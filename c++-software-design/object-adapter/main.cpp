@@ -3,6 +3,7 @@
 class Interface
 {
 public:
+    virtual ~Interface() = default;
     virtual void func() = 0;
 };
 
@@ -22,7 +23,7 @@ public:
     }
 };
 
-class ObjectAdapter : public Interface
+class ObjectAdapter final : public Interface
 {
 public:
     void func() override

@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <cstdlib>
 #include <functional>
 #include <unordered_set>
@@ -29,7 +30,7 @@ private:
 class Foo
 {
 public:
-    enum class StateChange { XChanged, YChanged };
+    enum class StateChange : std::uint8_t { XChanged, YChanged };
 
     using FooObserver = Observer<Foo, Foo::StateChange>;
 

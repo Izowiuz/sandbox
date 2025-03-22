@@ -9,7 +9,7 @@ class Foo
 {
 };
 
-void swap(Foo& a, Foo& b)
+void swap(Foo& a, Foo& b) noexcept
 {
     spdlog::info("some_namespace::swap");
 }

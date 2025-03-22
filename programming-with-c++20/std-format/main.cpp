@@ -4,16 +4,14 @@
 #include <string>
 #include <vector>
 
-#include "spdlog/spdlog.h"
-
 class StockIndex
 {
-    std::string mName{};
+    std::string mName;
     double mLastPoints{ 0 };
     double mPoints{ 0 };
 
 public:
-    StockIndex(std::string&& name)
+    explicit StockIndex(std::string&& name)
         : mName{ std::move(name) }
     {
     }

@@ -1,15 +1,12 @@
 #include <cstdlib>
-#include <typeinfo>
 
 #include <spdlog/spdlog.h>
 
-
-struct TypeID
-{
-    static inline size_t mCounter{0};
+struct TypeID {
+    static inline size_t mCounter{ 0 };
 
 public:
-    template<typename T>
+    template <typename T>
     static size_t id()
     {
         static size_t id = TypeID::mCounter++;
@@ -19,17 +16,14 @@ public:
 
 class Foo
 {
-
 };
 
 class Bar
 {
-
 };
 
 class Barer
 {
-
 };
 
 int main()

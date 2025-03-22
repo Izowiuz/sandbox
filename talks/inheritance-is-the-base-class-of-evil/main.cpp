@@ -18,7 +18,7 @@ class Object
 {
 public:
     template <typename T>
-    Object(T x)
+    explicit Object(T x)
         : mData{ std::make_shared<Model<T>>(std::move(x)) }
     {
     }
@@ -37,7 +37,7 @@ private:
 
     template <typename T>
     struct Model : public Concept {
-        Model(T x)
+        explicit Model(T x)
             : mData{ std::move(x) }
         {
         }
@@ -60,7 +60,7 @@ int main()
 
     vec.emplace_back(1);
     vec.emplace_back(std::string{ "lalala" });
-    vec.emplace_back(1.1f);
+    vec.emplace_back(1.1F);
     vec.emplace_back("ddd");
 
     for (const auto& e : vec) {

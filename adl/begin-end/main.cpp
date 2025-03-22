@@ -46,7 +46,7 @@ void traverseRange(const Range& r)
     }
 }
 
-int main()
+auto main() -> int
 {
     const auto range_1 = std::vector<int>{ 1, 2, 3, 4 };
     const auto range_2 = n::Foo();

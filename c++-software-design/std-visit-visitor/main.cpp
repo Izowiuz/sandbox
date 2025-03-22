@@ -7,7 +7,7 @@
 class Base
 {
 public:
-    Base(std::string name)
+    explicit Base(std::string name)
         : mName{ std::move(name) }
     {
     }

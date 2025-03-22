@@ -8,7 +8,7 @@ class Foo
 {
 public:
     // bad ctor - look at the order of members under private specifier
-    Foo(std::string string)
+    explicit Foo(std::string string)
         : mString{ std::move(string) }
         , mUint{ stringSize() }
     {
@@ -28,7 +28,7 @@ private:
 int main()
 {
     // garbage in mUint member
-    Foo f{"lalala"};
+    Foo f{ "lalala" };
 
     spdlog::info("proper string size: {}", f.stringSize());
 

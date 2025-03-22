@@ -11,7 +11,7 @@ struct Foo {
 
 Foo foo(std::string const& string, std::int32_t integer)
 {
-    return Foo{ string, integer };
+    return Foo{ .string = string, .integer = integer };
 }
 
 int main()

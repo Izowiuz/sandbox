@@ -6,7 +6,7 @@ template <typename T, typename Tag, template <typename> class... Skills>
 class StrongType : private Skills<StrongType<T, Tag, Skills...>>...
 {
 public:
-    StrongType(T value)
+    explicit StrongType(T value)
         : mData{ std::move(value) }
     {
     }
@@ -27,11 +27,17 @@ private:
 
 template <typename Derived>
 struct Addable {
+private:
+Addable() = default;
+
+public:
+
     friend std::ostream& operator<<(std::ostream& outstream, Derived const& value)
     {
         outstream << value.get();
         return outstream;
     }
+friend Derived;
 };
 
 template <typename Derived>

@@ -45,7 +45,7 @@ class IOStreamFooHelloStrategy
 public:
     void operator()(Foo const&)
     {
-        std::cout << "Say hello from Foo with IOStream!" << std::endl;
+        std::cout << "Say hello from Foo with IOStream!" << '\n';
     }
 };
 

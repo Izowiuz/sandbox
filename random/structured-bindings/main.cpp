@@ -6,7 +6,7 @@
 template <typename Key, typename Value>
 void insert(std::unordered_map<Key, Value>& map, Key const& key, Value const& value)
 {
-    if (auto const [it, flag] = map.insert({ key, value }); flag == true) {
+    if (auto const [it, flag] = map.insert({ key, value }); flag) {
         spdlog::info("inserted! [{}, {}]", key, value);
     } else {
         spdlog::info("not inserted! [{}, {}]", key, value);

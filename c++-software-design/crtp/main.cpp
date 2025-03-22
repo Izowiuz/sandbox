@@ -4,6 +4,8 @@
 template <typename Derived>
 class DenseVector
 {
+DenseVector() = default;
+
 protected:
     // no resources to release and no polymorphic delete is needed - no need for public or virtual dtor
     ~DenseVector() = default;
@@ -53,6 +55,7 @@ public:
     {
         return derived().end();
     }
+friend Derived;
 };
 
 template <typename T>

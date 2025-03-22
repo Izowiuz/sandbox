@@ -44,15 +44,15 @@ public:
 
 // deduction guide
 template <std::ranges::range Range>
-custom_take_view(Range&& range,
-                 std::ranges::range_difference_t<Range>) -> custom_take_view<std::ranges::views::all_t<Range>>;
+custom_take_view(Range&& range, std::ranges::range_difference_t<Range>)
+    -> custom_take_view<std::ranges::views::all_t<Range>>;
 
 // range adapter
 template <std::integral T>
 struct custom_take_range_adaptor_closure {
     T mCount;
 
-    constexpr custom_take_range_adaptor_closure(T count)
+    explicit constexpr custom_take_range_adaptor_closure(T count)
         : mCount{ count }
     {
     }

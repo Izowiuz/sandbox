@@ -30,7 +30,7 @@ class IOStreamFooHelloStrategy final : public HelloStrategy<Foo>
 public:
     void sayHello() const override
     {
-        std::cout << "Say hello from Foo with IOStream!" << std::endl;
+        std::cout << "Say hello from Foo with IOStream!" << '\n';
     }
 };
 

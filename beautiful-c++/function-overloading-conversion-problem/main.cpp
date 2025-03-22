@@ -21,7 +21,7 @@ int main()
 {
     Foo f;
 
-    f.foo(0.0f, "lala");
+    f.foo(0.0F, "lala");
 
     return EXIT_SUCCESS;
 }

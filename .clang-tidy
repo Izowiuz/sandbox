@@ -1,0 +1,61 @@
+Checks: >
+  -*,
+  bugprone-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  misc-unused-using-decls,
+  misc-unused-parameters,
+  misc-move-const-arg,
+  misc-definitions-in-headers,
+  hicpp-noexcept-move,
+  hicpp-static-assert,
+  hicpp-explicit-conversions,
+  cert-dcl21-cpp,
+  cert-oop11-cpp,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-identifier-naming,
+  -modernize-use-trailing-return-type,
+  -modernize-use-nodiscard
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
+
+CheckOptions:
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
+  - key: readability-identifier-naming.FunctionCase
+    value: camelBack
+  - key: readability-identifier-naming.ClassCase
+    value: PascalCase
+  - key: readability-identifier-naming.StructCase
+    value: PascalCase
+  - key: readability-identifier-naming.EnumCase
+    value: PascalCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+  - key: modernize-use-nullptr.NullMacros
+    value: 'NULL'
+  - key: modernize-use-nullptr.NullPtrs
+    value: '0'
+  - key: modernize-use-using.Replacement
+    value: true
+  - key: performance-for-range-copy.WarnOnAllAutoCopies
+    value: true
+  - key: performance-unnecessary-copy-initialization.StrictMode
+    value: true
+  - key: performance-noexcept-move-constructor.Strict
+    value: true
+  - key: performance-trivially-destructible.WarnForImplicitlyTrivial
+    value: true
+  - key: performance-type-promotion-in-math-fn.StrictMode
+    value: true
+  - key: bugprone-move-forwarding-reference.WarnOnlyIfThisHasBeenMoved
+    value: true
