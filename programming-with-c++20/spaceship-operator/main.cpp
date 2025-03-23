@@ -27,8 +27,6 @@ int main()
     f1 f1_b = {.a = 2, .b = 2.0F, .c = "1"};
     f1 f1_c = {.a = 2, .b = 2.0F, .c = "0"};
 
-    throw 1;
-
     spdlog::info("f1_a < f1_b: {}", f1_a < f1_b);
     spdlog::info("f1_c > f1_b: {}", f1_c > f1_b);
 
