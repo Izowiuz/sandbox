@@ -1,0 +1,3 @@
+stuff to research:
+    *   spaceship operator
+    *   coroutines
