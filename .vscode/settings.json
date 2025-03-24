@@ -1,0 +1,19 @@
+{
+    "cmake.useCMakePresets": "always",
+    "C_Cpp.loggingLevel": "Debug",
+    "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+    "C_Cpp.default.compileCommands": [
+        "${workspaceFolder}/.cmake/compile_commands.json"
+    ],
+    "cmake.copyCompileCommands": "${workspaceRoot}/.cmake/compile_commands.json",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.arguments": [
+        "--clang-tidy",
+        "-pretty",
+        "--pch-storage=memory",
+        "--background-index",
+        "--compile-commands-dir=.cmake/",
+        "-j=14",
+    ],
+    "editor.inlayHints.enabled": "on",
+}

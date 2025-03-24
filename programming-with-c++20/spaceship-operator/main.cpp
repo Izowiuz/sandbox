@@ -20,7 +20,6 @@ struct f2 {
     auto operator<=>(f2 const &) const = default;
 };
 
-
 int main()
 {
     f1 f1_a = {.a = 1, .b = 2.0F, .c = "1"};
