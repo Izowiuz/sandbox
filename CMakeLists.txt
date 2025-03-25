@@ -38,6 +38,10 @@ create_sandbox_target("random" "virtual-destructor")
 create_sandbox_target("random" "const-span")
 create_sandbox_target("random" "fold-expressions")
 create_sandbox_target("random" "structured-bindings")
+create_sandbox_target("random" "modules-test"
+ADDITIONAL_COMPILE_FLAGS
+    "-fmodules-ts"
+)
 
 create_sandbox_target("programming-with-c++20" "add")
 create_sandbox_target("programming-with-c++20" "abbreviated-function-template")
