@@ -61,3 +61,4 @@ create_sandbox_target("programming-with-c++20" "toarray")
 create_sandbox_target("programming-with-c++20" "for-loop-with-initializer")
 
 create_sandbox_target("a-tour-of-cpp" "if-with-initializer")
+create_sandbox_target("a-tour-of-cpp" "expect")
