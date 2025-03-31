@@ -2,47 +2,52 @@
 #include <cstdint>
 #include <cstdlib>
 #include <exception>
+#include <source_location>
 #include <vector>
 
 #include "spdlog/spdlog.h"
 
-enum class Action : std::uint8_t { Terminate, Log };
+enum class Action : std::uint8_t { Nothing, Log, Terminate };
 
 template <Action action = Action::Log>
-constexpr void expect(std::invocable auto&& condition, const char* message)
+constexpr void expect(std::invocable auto&& condition,
+                      const char* message,
+                      const std::source_location loc = std::source_location::current())
 {
     if constexpr (action == Action::Log) {
         if (!condition()) {
-            spdlog::info("expect failed with: \"{}\"", message);
+            spdlog::info("expect failed with: \"{}\" at: {}", message, loc.function_name());
         }
     } else if (action == Action::Terminate) {
         if (!condition()) {
-            spdlog::info("expect failed with: \"{}\" - terminating", message);
+            spdlog::info("expect failed with: \"{}\" at: {} - terminating", message, loc.function_name());
             std::terminate();
         }
     }
 }
 
-void parseVector1(std::vector<int> const& v)
+template <Action action>
+void parseVector(std::vector<int> const& v)
 {
-    expect([&v]() -> bool { return v.size() > 1 && v.size() < 5; }, ":[");
-}
-
-void parseVector2(std::vector<int> const& v)
-{
-    expect<Action::Terminate>([&v]() -> bool { return v.size() > 1 && v.size() < 5; }, ":[");
+    expect<action>([&v]() -> bool { return v.size() > 1 && v.size() < 5; }, ":[");
 }
 
 int main()
 {
-    std::vector<int> v1{ 1, 2, 3 };
-    parseVector1(v1);
+    std::vector<int> vecOk{ 1, 2, 3 };
+    std::vector<int> vecNOk{ 1, 2, 3, 4, 5 };
 
-    std::vector<int> v2{ 1, 2, 3, 4, 5 };
-    parseVector1(v2);
+    // conditions ok
+    parseVector<Action::Log>(vecOk);
 
-    std::vector<int> v3{ 1, 2, 3, 4, 5 };
-    parseVector2(v3);
+    // conditions not ok - log
+    parseVector<Action::Log>(vecNOk);
+
+    // conditions not ok - nothing
+    parseVector<Action::Nothing>(vecNOk);
+
+    // conditions not ok - terminate
+    parseVector<Action::Terminate>(vecNOk);
 
     return EXIT_SUCCESS;
 }
