@@ -42,6 +42,7 @@ create_sandbox_target("random" "modules-test"
 ADDITIONAL_COMPILE_FLAGS
     "-fmodules-ts"
 )
+create_sandbox_target("random" "structs-padding")
 
 create_sandbox_target("programming-with-c++20" "add")
 create_sandbox_target("programming-with-c++20" "abbreviated-function-template")
