@@ -10,7 +10,7 @@ int main()
     auto const arr2 = std::to_array({ 1, 2, 3 });
 
     spdlog::info(
-        "typeid of arr1: {}, typeid of arr2: {}", typeid(decltype(arr1)).name(), typeid(decltype(arr1)).name());
+        "typeid of arr1: {}, typeid of arr2: {}", typeid(decltype(arr1)).name(), typeid(decltype(arr2)).name());
 
     return EXIT_SUCCESS;
 }
