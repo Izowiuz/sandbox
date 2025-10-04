@@ -5,25 +5,40 @@ set(one_value_args "ADDITIONAL_COMPILE_FLAGS")
 set(multi_value_args "")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
-set(SANDBOX_TARGET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${tag}/${target_name}/")
-message("Target path: ${SANDBOX_TARGET_PATH}")
+set(sandbox_target_path "${CMAKE_CURRENT_SOURCE_DIR}/${tag}/${target_name}/")
+message("Target path: ${sandbox_target_path}")
 
+# create target path
+file(
+    MAKE_DIRECTORY "${sandbox_target_path}"
+)
+
+set(main_cpp "${sandbox_target_path}/main.cpp")
 set(full_target_name ${tag}-${target_name})
 
-if (NOT EXISTS "${SANDBOX_TARGET_PATH}")
-    message(FATAL_ERROR "Directory: ${SANDBOX_TARGET_PATH} do not exists.")
+# copy main.cpp template
+if(NOT EXISTS "${main_cpp}")
+    file(
+        COPY_FILE
+            "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp-template"
+            "${sandbox_target_path}/main.cpp"
+    )
+endif()
+
+if (NOT EXISTS "${sandbox_target_path}")
+    message(FATAL_ERROR "Directory: ${sandbox_target_path} do not exists.")
 endif()
 
 file(
 GLOB_RECURSE
     source_files
-    "${SANDBOX_TARGET_PATH}/src/*.*"
+    "${sandbox_target_path}/src/*.*"
 )
 
 file(
 GLOB_RECURSE
     tests_sources
-    "${SANDBOX_TARGET_PATH}/*Tests.cpp"
+    "${sandbox_target_path}/*Tests.cpp"
 )
 
 LIST(LENGTH tests_sources tests_sources_count)
@@ -45,7 +60,7 @@ if (tests_sources_count)
     target_include_directories(
         ${full_target_name}-tests
     PRIVATE
-        $<BUILD_INTERFACE:${SANDBOX_TARGET_PATH}/src>
+        $<BUILD_INTERFACE:${sandbox_target_path}/src>
     )
 
     target_link_libraries(
@@ -66,7 +81,7 @@ else()
     message("No tests found for: ${full_target_name}")
 endif()
 
-if (EXISTS "${SANDBOX_TARGET_PATH}/main.cpp")
+if (EXISTS "${sandbox_target_path}/main.cpp")
     message("Found main for: ${full_target_name}")
 
     add_executable(
@@ -78,13 +93,13 @@ if (EXISTS "${SANDBOX_TARGET_PATH}/main.cpp")
         ${full_target_name}
     PRIVATE
         ${source_files}
-        ${SANDBOX_TARGET_PATH}/main.cpp
+        ${sandbox_target_path}/main.cpp
     )
 
     target_include_directories(
         ${full_target_name}
     PRIVATE
-        $<BUILD_INTERFACE:${SANDBOX_TARGET_PATH}/src>
+        $<BUILD_INTERFACE:${sandbox_target_path}/src>
     )
 
     target_link_libraries(
