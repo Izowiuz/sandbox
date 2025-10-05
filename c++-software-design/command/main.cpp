@@ -15,7 +15,7 @@ class CommandExecutor
 public:
     void execute(Command&& cmd)
     {
-        cmd.execute();
+        std::move(cmd).execute();
     }
 };
 
