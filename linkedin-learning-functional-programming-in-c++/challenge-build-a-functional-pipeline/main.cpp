@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <ranges>
-#include <vector>
 
 #include "fmt/ranges.h"
 #include "spdlog/spdlog.h"
