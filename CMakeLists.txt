@@ -73,3 +73,4 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "combini
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-function-constrained-by-concepts")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "transforming-a-collection")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "lazy-evaluation-with-coroutines-infinite-fibonacci-generator")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-build-a-functional-pipeline")
