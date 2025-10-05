@@ -65,3 +65,5 @@ create_sandbox_target("a-tour-of-cpp" "if-with-initializer")
 create_sandbox_target("a-tour-of-cpp" "expect")
 
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "accumulate-and-reduce")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "bind")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-factorial-continuous-add")

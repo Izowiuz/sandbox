@@ -112,7 +112,7 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
     TARGET
         ${full_target_name}
     PROPERTY
-        CXX_STANDARD 20
+        CXX_STANDARD 23
     )
 
     if (arg_ADDITIONAL_COMPILE_FLAGS)
