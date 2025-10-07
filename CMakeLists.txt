@@ -76,3 +76,7 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "lazy-ev
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-build-a-functional-pipeline")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "recursive-templates")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "factorial-using-constexpr")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "advanced-compile-time-computation-fibonacci-sequence")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "compile-time-matrix-multiplication")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-implement-a-constexpr-factorial")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "using-std-move-only-function-for-higher-order-functions")
