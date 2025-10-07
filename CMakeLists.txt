@@ -10,13 +10,17 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 find_package(GTest CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 
+# types
 create_sandbox_target("types" "class-id")
 
+# algorithms
 create_sandbox_target("algorithms" "merge-sort")
 
+# adl
 create_sandbox_target("adl" "swap")
 create_sandbox_target("adl" "begin-end")
 
+# c++-software-design
 create_sandbox_target("c++-software-design" "classic-visitor")
 create_sandbox_target("c++-software-design" "std-visit-visitor")
 create_sandbox_target("c++-software-design" "acyclic-visitor")
@@ -30,10 +34,12 @@ create_sandbox_target("c++-software-design" "tagged-pull-observer-std-function")
 create_sandbox_target("c++-software-design" "crtp")
 create_sandbox_target("c++-software-design" "crtp-mixin-strong-type")
 
+# beautiful-c++
 create_sandbox_target("beautiful-c++" "function-overloading-conversion-problem")
 create_sandbox_target("beautiful-c++" "member-initialization-order")
 create_sandbox_target("beautiful-c++" "structured-bindings")
 
+# random
 create_sandbox_target("random" "virtual-destructor")
 create_sandbox_target("random" "const-span")
 create_sandbox_target("random" "fold-expressions")
@@ -44,6 +50,7 @@ ADDITIONAL_COMPILE_FLAGS
 )
 create_sandbox_target("random" "structs-padding")
 
+# programming-with-c++20
 create_sandbox_target("programming-with-c++20" "add")
 create_sandbox_target("programming-with-c++20" "abbreviated-function-template")
 create_sandbox_target("programming-with-c++20" "conditional-call")
@@ -61,9 +68,11 @@ create_sandbox_target("programming-with-c++20" "bitcast")
 create_sandbox_target("programming-with-c++20" "toarray")
 create_sandbox_target("programming-with-c++20" "for-loop-with-initializer")
 
+# a-tour-of-cpp
 create_sandbox_target("a-tour-of-cpp" "if-with-initializer")
 create_sandbox_target("a-tour-of-cpp" "expect")
 
+# linkedin-learning-functional-programming-in-c++
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "accumulate-and-reduce")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "bind")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-factorial-continuous-add")
@@ -80,3 +89,4 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "advance
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "compile-time-matrix-multiplication")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-implement-a-constexpr-factorial")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "using-std-move-only-function-for-higher-order-functions")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "function-composition-with-lambdas-and-std-invoke")

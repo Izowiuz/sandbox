@@ -26,8 +26,14 @@ int main()
     }
 
     {
-        std::move_only_function<int(int)> lambda_square = [](int x) { return x * x; };
-        spdlog::info("lambda_square: {}", apply_function_templated(std::move(lambda_square), 5));
+        std::move_only_function<int(int)> square = [](int x) { return x * x; };
+        spdlog::info("square: {}", apply_function_templated(std::move(square), 5));
+
+        std::move_only_function<int(int, int, int)> add_three = [](int x, int y, int z) { return x + y + z; };
+        spdlog::info("add_three: {}", apply_function_templated(std::move(add_three), 1, 2, 3));
+
+        std::move_only_function<int(int, int)> add_three_v2 = [y = 4](int x, int z) { return x + y + z; };
+        spdlog::info("add_three_v2: {}", apply_function_templated(std::move(add_three_v2), 1, 3));
     }
 
     return EXIT_SUCCESS;
