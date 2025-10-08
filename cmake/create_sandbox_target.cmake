@@ -5,7 +5,7 @@ set(one_value_args "ADDITIONAL_COMPILE_FLAGS")
 set(multi_value_args "ADDITIONAL_LIBRARIES")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
-set(sandbox_target_path "${CMAKE_CURRENT_SOURCE_DIR}/${tag}/${target_name}/")
+set(sandbox_target_path "${CMAKE_CURRENT_SOURCE_DIR}/categories/${tag}/${target_name}/")
 message("Target path: ${sandbox_target_path}")
 
 # create target path
@@ -20,7 +20,7 @@ set(full_target_name ${tag}-${target_name})
 if(NOT EXISTS "${main_cpp}")
     file(
         COPY_FILE
-            "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp-template"
+            "${CMAKE_CURRENT_SOURCE_DIR}/templates/main.cpp-template"
             "${sandbox_target_path}/main.cpp"
     )
 endif()
@@ -77,6 +77,14 @@ if (tests_sources_count)
     PROPERTY
         CXX_STANDARD 20
     )
+
+    set_property(
+    TARGET
+        ${full_target_name}-tests
+    PROPERTY
+        FOLDER "${tag}"
+    )
+
 else()
     message("No tests found for: ${full_target_name}")
 endif()
@@ -113,6 +121,13 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
         ${full_target_name}
     PROPERTY
         CXX_STANDARD 23
+    )
+
+    set_property(
+    TARGET
+        ${full_target_name}
+    PROPERTY
+        FOLDER "${tag}"
     )
 
     if (arg_ADDITIONAL_COMPILE_FLAGS)
