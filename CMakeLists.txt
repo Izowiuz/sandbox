@@ -9,6 +9,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 find_package(GTest CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
+find_package(Boost REQUIRED COMPONENTS hana)
 
 # types
 create_sandbox_target("types" "class-id")
@@ -90,4 +91,7 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "compile
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-implement-a-constexpr-factorial")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "using-std-move-only-function-for-higher-order-functions")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "function-composition-with-lambdas-and-std-invoke")
-create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-function-composition-pipeline")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-function-composition-pipeline"
+ADDITIONAL_LIBRARIES
+    "Boost::hana"
+)
