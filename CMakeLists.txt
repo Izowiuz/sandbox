@@ -90,3 +90,4 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "compile
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-implement-a-constexpr-factorial")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "using-std-move-only-function-for-higher-order-functions")
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "function-composition-with-lambdas-and-std-invoke")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-function-composition-pipeline")
