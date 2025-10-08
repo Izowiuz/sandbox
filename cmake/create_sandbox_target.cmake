@@ -6,7 +6,7 @@ set(multi_value_args "ADDITIONAL_LIBRARIES")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
 set(sandbox_target_path "${CMAKE_CURRENT_SOURCE_DIR}/categories/${tag}/${target_name}/")
-message("Target path: ${sandbox_target_path}")
+message(STATUS "Target path: ${sandbox_target_path}")
 
 # create target path
 file(
@@ -25,10 +25,6 @@ if(NOT EXISTS "${main_cpp}")
     )
 endif()
 
-if (NOT EXISTS "${sandbox_target_path}")
-    message(FATAL_ERROR "Directory: ${sandbox_target_path} do not exists.")
-endif()
-
 file(
 GLOB_RECURSE
     source_files
@@ -43,11 +39,10 @@ GLOB_RECURSE
 
 LIST(LENGTH tests_sources tests_sources_count)
 if (tests_sources_count)
-    message("Found tests for: ${full_target_name}")
+    message(STATUS "Found tests for: ${full_target_name}")
 
     add_executable(
         ${full_target_name}-tests
-        ""
     )
 
     target_sources(
@@ -71,30 +66,21 @@ if (tests_sources_count)
         GTest::gtest_main
     )
 
-    set_property(
-    TARGET
+    set_target_properties(
         ${full_target_name}-tests
-    PROPERTY
-        CXX_STANDARD 20
-    )
-
-    set_property(
-    TARGET
-        ${full_target_name}-tests
-    PROPERTY
+    PROPERTIES
         FOLDER "${tag}"
     )
 
 else()
-    message("No tests found for: ${full_target_name}")
+    message(STATUS "No tests found for: ${full_target_name}")
 endif()
 
 if (EXISTS "${sandbox_target_path}/main.cpp")
-    message("Found main for: ${full_target_name}")
+    message(STATUS "Found main for: ${full_target_name}")
 
     add_executable(
         ${full_target_name}
-        ""
     )
 
     target_sources(
@@ -116,32 +102,24 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
         spdlog::spdlog
     )
 
-    set_property(
-    TARGET
+    set_target_properties(
         ${full_target_name}
-    PROPERTY
-        CXX_STANDARD 23
-    )
-
-    set_property(
-    TARGET
-        ${full_target_name}
-    PROPERTY
+    PROPERTIES
         FOLDER "${tag}"
     )
 
     if (arg_ADDITIONAL_COMPILE_FLAGS)
-        message("For target: ${target_name} - ADDITIONAL_COMPILE_FLAGS set to: ${arg_ADDITIONAL_COMPILE_FLAGS}")
+        message(STATUS "For target: ${target_name} - ADDITIONAL_COMPILE_FLAGS set to: ${arg_ADDITIONAL_COMPILE_FLAGS}")
         target_compile_options(${full_target_name} PRIVATE ${arg_ADDITIONAL_COMPILE_FLAGS})
     endif()
 
     if (arg_ADDITIONAL_LIBRARIES)
-        message("For target: ${target_name} - arg_ADDITIONAL_LIBRARIES set to: ${arg_ADDITIONAL_LIBRARIES}")
+        message(STATUS "For target: ${target_name} - arg_ADDITIONAL_LIBRARIES set to: ${arg_ADDITIONAL_LIBRARIES}")
         target_link_libraries(${full_target_name} PRIVATE ${arg_ADDITIONAL_LIBRARIES})
     endif()
 
 else()
-    message("No main found for: ${full_target_name}")
+    message(STATUS "No main found for: ${full_target_name}")
 endif()
 
 endfunction()

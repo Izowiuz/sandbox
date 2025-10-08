@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 
-include(cmake/create_sandbox_target.cmake)
+set(CMAKE_CXX_STANDARD 23 CACHE STRING "C++ standard")
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(sandbox)
 include(CTest)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
-
-find_package(GTest CONFIG REQUIRED)
-find_package(spdlog CONFIG REQUIRED)
-find_package(Boost REQUIRED COMPONENTS hana)
+include(cmake/create_sandbox_target.cmake)
+include(cmake/dependencies.cmake)
 
 include(categories/types.cmake)
 include(categories/algorithms.cmake)
