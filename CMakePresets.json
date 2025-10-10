@@ -3,26 +3,48 @@
     "configurePresets": [
         {
             "name": "base",
+            "displayName": "Base configuration",
+            "description": "Common settings for all builds",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}/",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "1"
-            }
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_EXTENSIONS": "OFF"
+            },
+            "hidden": true
         },
         {
-          "inherits": "base",
           "name": "sandbox-debug",
+          "inherits": "base",
+          "displayName": "Sandbox (Debug)",
+          "description": "Debug build with extra warnings and sanitizers",
           "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Debug"
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_FLAGS_DEBUG": "-Wall -Wextra -Wpedantic -fsanitize=address,undefined"
           }
         },
         {
-          "inherits": "base",
           "name": "sandbox-release",
+          "inherits": "base",
+          "displayName": "Sandbox (Release)",
+          "description": "Optimized build for performance testing",
           "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Release"
+            "CMAKE_BUILD_TYPE": "Release",
+            "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON"
           }
         }
+    ],
+    "buildPresets": [
+      {
+        "name": "debug",
+        "configurePreset": "sandbox-debug"
+      },
+      {
+        "name": "release",
+        "configurePreset": "sandbox-release"
+      }
     ]
 }
