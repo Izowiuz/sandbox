@@ -1,7 +1,7 @@
 function(create_sandbox_target tag target_name)
 
 set(options "")
-set(one_value_args "ADDITIONAL_COMPILE_FLAGS" "ALIAS")
+set(one_value_args "ADDITIONAL_COMPILE_FLAGS" "ALIAS" "CXX_STANDARD")
 set(multi_value_args "ADDITIONAL_LIBRARIES")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
@@ -106,6 +106,19 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
     add_executable(
         ${full_target_name}
     )
+
+    # cxx standard override
+    if (arg_CXX_STANDARD)
+        set_target_properties(${full_target_name} PROPERTIES
+            CXX_STANDARD ${arg_CXX_STANDARD}
+            CXX_STANDARD_REQUIRED YES
+        )
+    else()
+        set_target_properties(${full_target_name} PROPERTIES
+            CXX_STANDARD ${CMAKE_CXX_STANDARD}
+            CXX_STANDARD_REQUIRED YES
+        )
+    endif()
 
     target_sources(
         ${full_target_name}

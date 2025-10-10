@@ -24,3 +24,7 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challen
 ADDITIONAL_LIBRARIES
     "Boost::hana"
 )
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "simple-rxcpp-stream"
+ADDITIONAL_LIBRARIES
+    "rxcpp"
+)

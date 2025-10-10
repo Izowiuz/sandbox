@@ -1,0 +1,12 @@
+diff generation --->
+
+with diff:
+diff -u a.hpp.orig b.hpp > some-patch.diff
+
+with git:
+git diff HEAD > some-patch.diff
+
+check with git:
+git apply --check some-patch.diff
+
+diff generation ---<
