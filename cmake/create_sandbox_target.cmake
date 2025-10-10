@@ -133,12 +133,12 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
     )
 
     if (arg_ADDITIONAL_COMPILE_FLAGS)
-        message(STATUS "For target: ${target_name} - ADDITIONAL_COMPILE_FLAGS set to: ${arg_ADDITIONAL_COMPILE_FLAGS}")
+        message(STATUS "For target: ${full_target_name} - ADDITIONAL_COMPILE_FLAGS set to: ${arg_ADDITIONAL_COMPILE_FLAGS}")
         target_compile_options(${full_target_name} PRIVATE ${arg_ADDITIONAL_COMPILE_FLAGS})
     endif()
 
     if (arg_ADDITIONAL_LIBRARIES)
-        message(STATUS "For target: ${target_name} - arg_ADDITIONAL_LIBRARIES set to: ${arg_ADDITIONAL_LIBRARIES}")
+        message(STATUS "For target: ${full_target_name} - ADDITIONAL_LIBRARIES set to: ${arg_ADDITIONAL_LIBRARIES}")
         target_link_libraries(${full_target_name} PRIVATE ${arg_ADDITIONAL_LIBRARIES})
     endif()
 
