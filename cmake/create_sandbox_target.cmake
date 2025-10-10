@@ -1,7 +1,7 @@
 function(create_sandbox_target tag target_name)
 
 set(options "")
-set(one_value_args "ADDITIONAL_COMPILE_FLAGS")
+set(one_value_args "ADDITIONAL_COMPILE_FLAGS" "ALIAS")
 set(multi_value_args "ADDITIONAL_LIBRARIES")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
@@ -14,7 +14,31 @@ file(
 )
 
 set(main_cpp "${sandbox_target_path}/main.cpp")
-set(full_target_name ${tag}-${target_name})
+
+# target name depending if alias is set or not
+if(arg_ALIAS)
+    set(full_target_name "${arg_ALIAS}-${target_name}")
+else()
+    string(REGEX REPLACE "[^a-zA-Z0-9]+" ";" parts "${tag}")
+
+    list(FILTER parts EXCLUDE REGEX "^$")
+    list(LENGTH parts parts_count)
+
+    if(parts_count GREATER 1)
+        set(auto_alias "")
+        foreach(part IN LISTS parts)
+            string(SUBSTRING "${part}" 0 1 first_letter)
+            string(APPEND auto_alias "${first_letter}")
+        endforeach()
+        string(TOLOWER "${auto_alias}" auto_alias)
+    else()
+        string(TOLOWER "${tag}" auto_alias)
+    endif()
+
+    set(arg_ALIAS ${auto_alias})
+    message(STATUS "Generated alias: '${arg_ALIAS}' for tag: '${tag}'")
+    set(full_target_name "${arg_ALIAS}-${target_name}")
+endif()
 
 # copy main.cpp template
 if(NOT EXISTS "${main_cpp}")
