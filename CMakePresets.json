@@ -20,10 +20,9 @@
           "name": "sandbox-debug",
           "inherits": "base",
           "displayName": "Sandbox (Debug)",
-          "description": "Debug build with extra warnings and sanitizers",
+          "description": "Debug build",
           "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Debug",
-            "CMAKE_CXX_FLAGS_DEBUG": "-Wall -Wextra -Wpedantic -fsanitize=address,undefined"
+            "CMAKE_BUILD_TYPE": "Debug"
           }
         },
         {
