@@ -28,9 +28,9 @@ class Barer
 
 int main()
 {
-    Foo a;
-    Bar b;
-    Barer c;
+    [[maybe_unused]] Foo a;
+    [[maybe_unused]] Bar b;
+    [[maybe_unused]] Barer c;
 
     spdlog::info("a: {}", TypeID::id<Foo>());
     spdlog::info("b: {}", TypeID::id<Bar>());

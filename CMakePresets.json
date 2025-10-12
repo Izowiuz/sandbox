@@ -9,7 +9,6 @@
             "binaryDir": "${sourceDir}/build/${presetName}/",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_CXX_STANDARD": "23",
                 "CMAKE_CXX_EXTENSIONS": "OFF"
@@ -22,7 +21,8 @@
           "displayName": "Sandbox (Debug)",
           "description": "Debug build",
           "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Debug"
+            "CMAKE_BUILD_TYPE": "Debug",
+            "SANDBOX_ADDITIONAL_FLAGS": "-Wall -Wextra -Wpedantic"
           }
         },
         {
@@ -34,6 +34,16 @@
             "CMAKE_BUILD_TYPE": "Release",
             "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON"
           }
+        },
+        {
+          "name": "sandbox-asan",
+          "inherits": "base",
+          "displayName": "Sandbox (ASAN)",
+          "description": "Build with sanitizers",
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+            "SANDBOX_ADDITIONAL_FLAGS": "-Wall -Wextra -Wpedantic -fsanitize=address,undefined -fno-omit-frame-pointer"
+          }
         }
     ],
     "buildPresets": [
@@ -44,6 +54,10 @@
       {
         "name": "release",
         "configurePreset": "sandbox-release"
+      },
+      {
+        "name": "asan",
+        "configurePreset": "sandbox-asan"
       }
     ]
 }

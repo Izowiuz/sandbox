@@ -9,6 +9,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(sandbox)
 include(CTest)
 
+if(SANDBOX_ADDITIONAL_FLAGS)
+    message(STATUS "Additional compile flags: ${SANDBOX_ADDITIONAL_FLAGS} set")
+    add_compile_options(${SANDBOX_ADDITIONAL_FLAGS})
+endif()
+
 include(cmake/create_sandbox_target.cmake)
 include(cmake/dependencies.cmake)
 
