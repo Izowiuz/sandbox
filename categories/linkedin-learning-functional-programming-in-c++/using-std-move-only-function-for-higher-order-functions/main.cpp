@@ -10,7 +10,7 @@ void apply_function(std::move_only_function<int(int)> func, int value)
 }
 
 /**
- * Params&&... params -> perfect forwarding parametrów do wywołania func(_
+ * Params&&... params -> perfect forwarding parametrów do wywołania func()
  */
 template <typename Return, typename... Params>
 Return apply_function_templated(std::move_only_function<Return(Params...)> func, Params&&... params)

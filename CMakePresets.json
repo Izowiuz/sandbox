@@ -42,7 +42,10 @@
           "description": "Build with sanitizers",
           "cacheVariables": {
             "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-            "SANDBOX_ADDITIONAL_FLAGS": "-Wall -Wextra -Wpedantic -fsanitize=address,undefined -fno-omit-frame-pointer"
+            "SANDBOX_ADDITIONAL_FLAGS": "-Wall -Wextra -Wpedantic"
+          },
+          "environment": {
+            "SANDBOX_ENABLE_ASAN": "ON"
           }
         }
     ],

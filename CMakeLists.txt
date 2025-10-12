@@ -10,13 +10,15 @@ project(sandbox)
 include(CTest)
 
 if(SANDBOX_ADDITIONAL_FLAGS)
-    message(STATUS "Additional compile flags: ${SANDBOX_ADDITIONAL_FLAGS} set")
-    add_compile_options(${SANDBOX_ADDITIONAL_FLAGS})
+    message(STATUS "Additional, global compile flags: ${SANDBOX_ADDITIONAL_FLAGS} set")
+    separate_arguments(EXTRA_FLAGS_TMP UNIX_COMMAND "${SANDBOX_ADDITIONAL_FLAGS}")
+    add_compile_options(${EXTRA_FLAGS_TMP})
 endif()
 
 include(cmake/create_sandbox_target.cmake)
 include(cmake/dependencies.cmake)
 
+include(categories/asan.cmake)
 include(categories/types.cmake)
 include(categories/algorithms.cmake)
 include(categories/adl.cmake)

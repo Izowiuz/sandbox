@@ -6,6 +6,9 @@ set(multi_value_args "ADDITIONAL_LIBRARIES")
 cmake_parse_arguments(PARSE_ARGV 0 arg "${options}" "${one_value_args}" "${multi_value_args}")
 
 set(sandbox_target_path "${CMAKE_CURRENT_SOURCE_DIR}/categories/${tag}/${target_name}/")
+
+message(STATUS "")
+message(STATUS "====== ${tag}: ${target_name} ======")
 message(STATUS "Target path: ${sandbox_target_path}")
 
 # create target path
@@ -101,7 +104,7 @@ else()
 endif()
 
 if (EXISTS "${sandbox_target_path}/main.cpp")
-    message(STATUS "Found main for: ${full_target_name}")
+    message(STATUS "Found main.cpp for: ${full_target_name}")
 
     add_executable(
         ${full_target_name}
@@ -154,6 +157,24 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
         message(STATUS "For target: ${full_target_name} - ADDITIONAL_LIBRARIES set to: ${arg_ADDITIONAL_LIBRARIES}")
         target_link_libraries(${full_target_name} PRIVATE ${arg_ADDITIONAL_LIBRARIES})
     endif()
+
+    # conditionally enable ASAN address and undefined sanitizers
+    # if(DEFINED ENV{SANDBOX_ENABLE_ASAN} AND "$ENV{SANDBOX_ENABLE_ASAN}" STREQUAL "ON")
+        message(STATUS "ASAN and UBSAN enabled for target: ${full_target_name}")
+        add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
+
+        target_compile_options(
+            ${full_target_name}
+        PRIVATE
+            -fsanitize=address,undefined -fno-omit-frame-pointer
+        )
+
+        target_link_options(
+            ${full_target_name}
+        PRIVATE
+            -fsanitize=address,undefined
+        )
+    # endif()
 
 else()
     message(STATUS "No main found for: ${full_target_name}")

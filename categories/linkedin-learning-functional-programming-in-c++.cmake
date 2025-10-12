@@ -28,3 +28,12 @@ create_sandbox_target("linkedin-learning-functional-programming-in-c++" "simple-
 ADDITIONAL_LIBRARIES
     "rxcpp"
 )
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "coroutine-with-rxcpp-and-ranges"
+ADDITIONAL_LIBRARIES
+    "rxcpp"
+)
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "real-time-data-stream-processing-in-a-functional-manner"
+ADDITIONAL_LIBRARIES
+    "rxcpp"
+)
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "functional-asynchronous-event-handling")
