@@ -37,3 +37,7 @@ ADDITIONAL_LIBRARIES
     "rxcpp"
 )
 create_sandbox_target("linkedin-learning-functional-programming-in-c++" "functional-asynchronous-event-handling")
+create_sandbox_target("linkedin-learning-functional-programming-in-c++" "challenge-word-frequency-counter-with-rxcpp"
+ADDITIONAL_LIBRARIES
+    "rxcpp"
+)
