@@ -19,7 +19,6 @@ public:
     template <typename T>
         requires(CanSayHello<T>)
     explicit Erased(T&& object)
-        // we require move ctor for T
         : mObjectPtr{ new T(std::forward<T>(object)), [](void* object) { delete static_cast<T*>(object); } }
     {
         // our pretty, handmade vtable
@@ -38,7 +37,7 @@ public:
     Erased& operator=(Erased&& other) noexcept
     {
         if (this != &other) {
-            mObjectPtr = std::exchange(other.mObjectPtr, nullptr);
+            mObjectPtr = std::move(other.mObjectPtr);
             mInterface = std::exchange(other.mInterface, nullptr);
         }
         return *this;
@@ -58,7 +57,6 @@ private:
 
     struct Interface {
         SayHelloFunc sayHello = nullptr;
-        void (*destroy)(void*) = nullptr;
     };
 
     std::unique_ptr<void, void (*)(void*)> mObjectPtr{ nullptr, [](void*) {} };
