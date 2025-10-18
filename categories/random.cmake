@@ -7,3 +7,4 @@ create_sandbox_target("random" "modules-test"
 ADDITIONAL_COMPILE_FLAGS
     "-fmodules-ts"
 )
+create_sandbox_target("random" "ref-qualifiers")
