@@ -9,7 +9,7 @@
 
 int main()
 {
-    std::vector<std::string> words{ "hello", "world", "hello", "functional", "programming" };
+    std::vector<std::string> words{ "hello", "world", "hello", "functional", "world", "programming" };
     std::unordered_map<std::string, int> word_count;
 
     auto stream = rxcpp::observable<>::create<std::string>([&](const rxcpp::subscriber<std::string>& subscriber) {

@@ -159,7 +159,7 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
     endif()
 
     # conditionally enable ASAN address and undefined sanitizers
-    # if(DEFINED ENV{SANDBOX_ENABLE_ASAN} AND "$ENV{SANDBOX_ENABLE_ASAN}" STREQUAL "ON")
+    if(DEFINED ENV{SANDBOX_ENABLE_ASAN} AND "$ENV{SANDBOX_ENABLE_ASAN}" STREQUAL "ON")
         message(STATUS "ASAN and UBSAN enabled for target: ${full_target_name}")
         add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
 
@@ -174,7 +174,7 @@ if (EXISTS "${sandbox_target_path}/main.cpp")
         PRIVATE
             -fsanitize=address,undefined
         )
-    # endif()
+    endif()
 
 else()
     message(STATUS "No main found for: ${full_target_name}")
