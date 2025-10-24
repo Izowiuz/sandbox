@@ -2,7 +2,7 @@
 #include <string>
 
 #include "boost/hana.hpp"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int main()
 {

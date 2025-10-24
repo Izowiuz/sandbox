@@ -1,7 +1,7 @@
 #include <array>
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename T, int N, int M>
 using Matrix = std::array<std::array<T, N>, M>;

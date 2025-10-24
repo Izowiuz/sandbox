@@ -1,7 +1,7 @@
 #include <array>
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 constexpr int factorial(int n)
 {

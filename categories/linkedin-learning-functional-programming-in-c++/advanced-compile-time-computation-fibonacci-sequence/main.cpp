@@ -1,7 +1,7 @@
 #include <array>
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 consteval int fibonacci(int n)
 {

@@ -1,7 +1,7 @@
 #include <cstdlib>
 
 #include "rxcpp/rx.hpp"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 rxcpp::observable<int> generate_values()
 {

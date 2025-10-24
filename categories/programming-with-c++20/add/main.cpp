@@ -2,7 +2,7 @@
 #include <string>
 #include <type_traits>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 class foo
 {

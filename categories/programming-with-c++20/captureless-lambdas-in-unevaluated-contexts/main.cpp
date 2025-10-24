@@ -3,7 +3,7 @@
 #include <string>
 #include <utility>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 struct Element {
     std::string name;

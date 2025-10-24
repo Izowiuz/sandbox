@@ -1,7 +1,7 @@
 #include <concepts>
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename T>
 concept IsFloatingPoint = std::is_floating_point_v<T>;

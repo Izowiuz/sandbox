@@ -1,6 +1,6 @@
 #include <cstdint>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 
 struct A

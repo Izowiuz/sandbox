@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <unordered_set>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename Subject, typename StateTag>
 class Observer

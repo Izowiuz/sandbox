@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <int N>
 struct Factorial {

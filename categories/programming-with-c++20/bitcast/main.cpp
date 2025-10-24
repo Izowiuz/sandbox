@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int main()
 {

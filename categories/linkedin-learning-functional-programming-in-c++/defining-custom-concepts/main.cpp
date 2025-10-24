@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "fmt/ranges.h"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename Container>
 concept Iterable = requires(Container t) {

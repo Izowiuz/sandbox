@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <utility>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 // promise type
 template <typename Value, typename Generator>

@@ -8,7 +8,7 @@
 #include <thread>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 using event_handler = std::function<void(std::string const&)>;
 

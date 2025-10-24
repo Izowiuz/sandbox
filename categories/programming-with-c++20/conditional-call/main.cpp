@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename T>
 concept SupportsValidation = requires(T t) {

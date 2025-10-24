@@ -5,7 +5,7 @@
 
 #include "fmt/ranges.h"
 #include "rxcpp/rx.hpp"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int main()
 {

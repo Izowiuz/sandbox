@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <functional>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int sum(int x, int y)
 {

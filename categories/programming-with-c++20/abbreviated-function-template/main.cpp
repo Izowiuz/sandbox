@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <mutex>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 class Foo
 {

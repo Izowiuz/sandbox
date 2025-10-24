@@ -4,7 +4,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 auto const l1 = []<typename T>(T const& a, T const& b) { spdlog::info("a: {}, b: {}", a, b); };
 

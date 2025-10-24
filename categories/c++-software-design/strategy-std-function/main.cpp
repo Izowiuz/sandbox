@@ -2,7 +2,7 @@
 #include <functional>
 #include <iostream>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 class Base
 {

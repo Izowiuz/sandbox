@@ -5,7 +5,7 @@
 #include <source_location>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 enum class Action : std::uint8_t { Nothing, Log, Terminate };
 

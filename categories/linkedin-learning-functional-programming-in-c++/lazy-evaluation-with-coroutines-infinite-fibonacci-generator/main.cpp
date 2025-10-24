@@ -1,7 +1,7 @@
 #include <coroutine>
 #include <optional>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 // coroutine return type
 struct Generator {

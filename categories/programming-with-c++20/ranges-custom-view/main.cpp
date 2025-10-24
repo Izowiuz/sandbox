@@ -2,7 +2,7 @@
 #include <ranges>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 // custom view
 template <std::ranges::view Range>

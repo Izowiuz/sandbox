@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <string>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 struct f1 {
     int a;

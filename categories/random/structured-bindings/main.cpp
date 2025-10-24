@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <unordered_map>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename Key, typename Value>
 void insert(std::unordered_map<Key, Value>& map, Key const& key, Value const& value)

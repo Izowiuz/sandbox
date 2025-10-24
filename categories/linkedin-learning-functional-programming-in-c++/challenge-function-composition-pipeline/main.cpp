@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 auto compose(auto f1, auto f2, auto f3)
 {

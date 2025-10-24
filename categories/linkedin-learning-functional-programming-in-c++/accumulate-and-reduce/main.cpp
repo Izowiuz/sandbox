@@ -4,7 +4,7 @@
 #include <ranges>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 template <typename Collection>
 void print_collection(Collection const& collection)

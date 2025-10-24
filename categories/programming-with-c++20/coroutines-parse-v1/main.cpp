@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 static const std::byte ESC{ 'H' };
 static const std::byte SOF{ 0x10 };

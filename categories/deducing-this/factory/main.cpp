@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 class Foo
 {

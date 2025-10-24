@@ -2,7 +2,7 @@
 #include <ranges>
 
 #include "fmt/ranges.h"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int main()
 {

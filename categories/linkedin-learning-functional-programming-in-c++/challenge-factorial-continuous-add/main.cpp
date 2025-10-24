@@ -3,7 +3,7 @@
 #include <ranges>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int factorial_recursive(int n)
 {

@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <vector>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 void f(std::vector<int> const& v)
 {

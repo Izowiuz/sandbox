@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <functional>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 void apply_function(std::move_only_function<int(int)> func, int value)
 {

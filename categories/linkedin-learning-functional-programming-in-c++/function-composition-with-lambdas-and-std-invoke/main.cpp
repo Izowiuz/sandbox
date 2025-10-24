@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <functional>
 
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 auto compose(auto f, auto g)
 {

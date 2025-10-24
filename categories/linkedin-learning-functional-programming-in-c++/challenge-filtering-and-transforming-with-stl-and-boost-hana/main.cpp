@@ -5,7 +5,7 @@
 
 #include "boost/hana.hpp"
 #include "fmt/ranges.h"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 int main()
 {
