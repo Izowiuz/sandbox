@@ -1,7 +1,13 @@
 diff --git a/projects/CMake/CMakeLists.txt b/projects/CMake/CMakeLists.txt
-index 8856aa4..1e0f832 100755
+index 8856aa4..aebf5f0 100755
 --- a/projects/CMake/CMakeLists.txt
 +++ b/projects/CMake/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ 
+ project(rxcpp VERSION 2.2.4 LANGUAGES C CXX)
+ 
 @@ -11,18 +11,18 @@ get_filename_component(RXCPP_DIR "${RXCPP_DIR}" PATH)
  
  MESSAGE( STATUS "RXCPP_DIR: " ${RXCPP_DIR} )

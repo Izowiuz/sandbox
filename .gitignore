@@ -3,4 +3,5 @@ CMakeUserPresets.json
 build/
 .cmake/
 .qtcreator/
+.idea/
 vcpkg_installed/
