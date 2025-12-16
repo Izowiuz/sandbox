@@ -2,7 +2,7 @@ include(FetchContent)
 
 find_package(GTest CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
-find_package(Boost REQUIRED COMPONENTS hana)
+find_package(Boost CONFIG REQUIRED COMPONENTS hana)
 
 FetchContent_Declare(
     RxCpp
