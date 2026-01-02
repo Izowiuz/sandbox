@@ -61,10 +61,19 @@ IndentWidth: 4
 
 PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 1000000
-PenaltyBreakBeforeFirstCallParameter: 1000000
+PenaltyBreakBeforeFirstCallParameter: 1
 PenaltyBreakAssignment: 100
 PenaltyBreakString: 1000
 PenaltyBreakComment: 300
 
 IncludeBlocks: Regroup
 SortIncludes: true
+IncludeCategories:
+  - Regex: '^<.*>'
+    Priority: 1
+  - Regex: '^"engine/.*"'
+    Priority: 2
+  - Regex: '^"framework/.*"'
+    Priority: 3
+  - Regex: '.*'
+    Priority: 4
