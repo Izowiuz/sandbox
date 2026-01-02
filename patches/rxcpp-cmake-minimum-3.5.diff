@@ -4,7 +4,7 @@ index ae61a35..fd00b70 100644
 +++ b/CMakeLists.txt
 @@ -1,4 +1,4 @@
 -cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
-+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
  
  # define some folders
  
