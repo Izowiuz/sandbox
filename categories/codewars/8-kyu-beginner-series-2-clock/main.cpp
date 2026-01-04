@@ -1,6 +1,5 @@
-#include <cstdlib>
 #include <chrono>
-
+#include <cstdlib>
 #include <spdlog/spdlog.h>
 
 /*
@@ -22,12 +21,14 @@ Input constraints:
     0 <= s <= 59
 */
 
-int past(int h, int m, int s) {
+int past(int h, int m, int s)
+{
     std::chrono::hours const hours{ h };
     std::chrono::minutes const minutes{ m };
     std::chrono::seconds const seconds{ s };
 
-    return static_cast<int>(std::chrono::duration_cast<std::chrono::milliseconds>(hours + minutes + seconds).count());
+    return static_cast<int>(
+        std::chrono::duration_cast<std::chrono::milliseconds>(hours + minutes + seconds).count());
 }
 
 int main()

@@ -1,12 +1,12 @@
-#include <cstdlib>
-#include <string>
 #include <algorithm>
+#include <cstdlib>
 #include <cstring>
-
 #include <spdlog/spdlog.h>
+#include <string>
 
 /*
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+Write a function to convert a name into initials. This kata strictly takes two words with one space
+in between them.
 
 The output should be two capital letters with a dot separating them.
 
@@ -95,6 +95,7 @@ int main()
     spdlog::info(abbrevName_1("Some One"));
     spdlog::info(abbrevName_2("Some One"));
     spdlog::info(abbrevName_3("some one Now"));
+    spdlog::info(abbrevName_3("Some"));
 
     return EXIT_SUCCESS;
 }

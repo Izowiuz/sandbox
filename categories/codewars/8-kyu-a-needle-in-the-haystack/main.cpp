@@ -1,9 +1,8 @@
-#include <cstdlib>
-#include <vector>
-#include <string>
 #include <algorithm>
-
+#include <cstdlib>
 #include <spdlog/spdlog.h>
+#include <string>
+#include <vector>
 
 /*
 Can you find the needle in the haystack?
@@ -16,7 +15,8 @@ After your function finds the needle it should return a message (as a string) th
 
 Example(Input --> Output)
 
-["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
+["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position
+5"
 
 Note: In COBOL, it should return "found the needle at position 6"
 */
@@ -34,7 +34,7 @@ std::string findNeedle(const std::vector<std::string>& haystack)
 
 int main()
 {
-    spdlog::info(findNeedle({"hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"}));
+    spdlog::info(findNeedle({ "hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk" }));
 
     return EXIT_SUCCESS;
 }

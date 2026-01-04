@@ -1,9 +1,8 @@
-#include <vector>
-#include <string>
-#include <sstream>
-
 #include <fmt/ranges.h>
 #include <spdlog/spdlog.h>
+#include <sstream>
+#include <string>
+#include <vector>
 
 /*
 Write a function to split a string and convert it into an array of words.
@@ -14,16 +13,17 @@ Examples (Input ==> Output):
 "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
 */
 
-std::vector<std::string> string_to_array(const std::string& s) {
+std::vector<std::string> string_to_array(const std::string& s)
+{
     if (s.empty()) {
-        return {""};
+        return { "" };
     }
 
     std::vector<std::string> ret;
     std::stringstream ss(s);
 
     std::string word;
-    while(ss >> word) {
+    while (ss >> word) {
         ret.push_back(word);
     }
 

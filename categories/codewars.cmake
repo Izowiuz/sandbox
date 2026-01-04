@@ -3,3 +3,8 @@ create_sandbox_target("codewars" "8-kyu-abbreviate-a-two-word-name")
 create_sandbox_target("codewars" "8-kyu-century-from-year")
 create_sandbox_target("codewars" "8-kyu-beginner-series-2-clock")
 create_sandbox_target("codewars" "8-kyu-a-needle-in-the-haystack")
+create_sandbox_target("codewars" "8-kyu-find-maximum-and-minimum-values-of-a-list")
+create_sandbox_target("codewars" "8-kyu-beginner-lost-without-a-map")
+create_sandbox_target("codewars" "8-kyu-make-upper-case")
+
+create_sandbox_target("codewars" "5-kyu-the-hashtag-generator")
