@@ -8,3 +8,4 @@ create_sandbox_target("codewars" "8-kyu-beginner-lost-without-a-map")
 create_sandbox_target("codewars" "8-kyu-make-upper-case")
 
 create_sandbox_target("codewars" "5-kyu-the-hashtag-generator")
+create_sandbox_target("codewars" "5-kyu-pete-the-baker")
